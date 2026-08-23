@@ -232,14 +232,22 @@ st.markdown("""
         font-weight: 500 !important;
     }
     
-    /* Ensure selectbox selected text is visible */
-    [data-testid="stSelectbox"] span, [data-testid="stSelectbox"] div {
+    /* Ensure selectbox selected text and dropdown options are strictly black */
+    [data-testid="stSelectbox"] * {
         color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
+    }
+    
+    /* Target the floating dropdown menu list in BaseWeb */
+    div[data-baseweb="popover"] ul li {
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important;
     }
 
     /* Style placeholders for high contrast */
     ::placeholder {
         color: #555555 !important;
+        -webkit-text-fill-color: #555555 !important;
         opacity: 1 !important;
     }
 

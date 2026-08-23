@@ -218,22 +218,29 @@ st.markdown("""
         color: #2d2d44 !important;
     }
 
-    /* Universally fix input fields colors to prevent dark mode corruption */
+    /* Universally fix input fields colors to prevent dark mode corruption and maximize contrast */
     [data-testid="stTextInput"] input,
     [data-testid="stSelectbox"] div[data-baseweb="select"] > div,
     [data-testid="stTextArea"] textarea {
-        background: rgba(255, 255, 255, 0.7) !important;
-        background-color: rgba(255, 255, 255, 0.7) !important;
-        color: #2d2d44 !important;
-        -webkit-text-fill-color: #2d2d44 !important; /* Forces text color on iOS/Webkit */
-        border: 1px solid rgba(0, 0, 0, 0.1) !important;
+        background: rgba(255, 255, 255, 0.95) !important;
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        color: #000000 !important;
+        -webkit-text-fill-color: #000000 !important; /* Forces text color on iOS/Webkit */
+        border: 1px solid rgba(0, 0, 0, 0.2) !important;
         border-radius: 12px !important;
         font-family: 'Inter', sans-serif !important;
+        font-weight: 500 !important;
     }
     
     /* Ensure selectbox selected text is visible */
     [data-testid="stSelectbox"] span, [data-testid="stSelectbox"] div {
-        color: #2d2d44 !important;
+        color: #000000 !important;
+    }
+
+    /* Style placeholders for high contrast */
+    ::placeholder {
+        color: #555555 !important;
+        opacity: 1 !important;
     }
 
     [data-testid="stTextArea"] textarea:focus {
